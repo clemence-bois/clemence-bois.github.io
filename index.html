@@ -78,6 +78,29 @@
       .avatar{ width:140px; height:140px; border-radius:18px; }
       h1{font-size:clamp(26px,6.2vw,34px);}
     }
+
+    .contact-line {
+      margin-top: 30px;       /* espace au-dessus */
+      margin-bottom: 25px;    /* espace en dessous */
+      font-size: 16px;        /* taille un peu plus lisible */
+      line-height: 1.6;
+    }
+
+  .contact-line strong {
+    font-weight: 600;
+    color: var(--text);
+    margin-right: 6px;
+  }
+
+  .contact-line a {
+    color: var(--link);
+    text-decoration: none;
+  }
+
+  .contact-line a:hover {
+    text-decoration: underline;
+  }
+
   </style>
 
   <!-- JSON-LD Person -->
@@ -129,7 +152,10 @@
           <p>My research lies at the intersection of international trade and environmental economics, exploring how information shocks, policy incentives, and trade integration shape environmental and economic outcomes.</p>
 
           <!-- email juste sous les interests, dans le même bloc -->
-          <p style="margin-top:10px"><strong>Contact:</strong> <a href="mailto:clemence.bois@psemail.eu">clemence.bois[at]psemail.eu</a></p>
+          <p class="contact-line">
+            <strong>Contact:</strong>
+            <a href="mailto:clemence.bois@psemail.eu">clemence.bois[at]psemail.eu</a>
+          </p>
 
           <!-- liens en footnote, petit et discret -->
           <p class="footnote">
@@ -170,6 +196,7 @@
   </script>
 </body>
 </html>
+
 
 
 
