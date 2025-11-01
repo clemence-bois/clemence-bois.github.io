@@ -58,36 +58,51 @@
   </div>
 </header>
 
-<main class="wrap">
-  <h1>Curriculum Vitae (English)</h1>
-  
-  <p style="margin-bottom: 24px;">
-        <a href="assets/CV_EN.pdf" download class="btn" style="background:var(--link); color:var(--surface);">
-      📄 Download CV (PDF)
-    </a>
-  </p>
+<main class="wrap" style="padding-top:80px; padding-bottom:100px; min-height:90vh;">
+  <h1 style="text-align:center; margin-bottom:30px;">Curriculum Vitae (English)</h1>
 
-    <div style="
-      /* Assure que le lecteur prenne de la hauteur pour être lisible */
-      height: calc(100vh - 60px); 
-      min-height: 1200px;
-      border: 1px solid rgba(148,163,184,.25); 
-      border-radius: var(--radius); 
-      overflow: hidden;
-      margin-bottom: 40px; 
-  ">
-        <iframe 
-        src="https://drive.google.com/file/d/1AI0mynQZm7xstI3BMLnMtE7plaChrafr/view?usp=sharing" 
-        width="100%" 
-        height="100%" 
-        style="border: none;"
-        title="Embedded English CV">
-    </iframe>
-  </div>
+  <p style="text-align:center; margin-bottom:40px;">
+    <a href="assets/CV_EN.pdf" download 
+       class="btn" 
+       style="
+         background: var(--link);
+         color: var(--surface);
+         padding: 10px 20px;
+         border-radius: 8px;
+         text-decoration: none;
+         font-weight: 500;
+         transition: background 0.2s ease;
+       ">
+      📄 Download CV (PDF)
+    </a>
+  </p>
 
-    <div style="color:var(--muted); text-align:center; padding-top:20px;">
-  </div>
+  <div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 150px);
+    min-height: 1200px;
+    border: 1px solid rgba(148,163,184,.25);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    background: var(--surface);
+  ">
+    <iframe 
+      src="https://drive.google.com/file/d/1AI0mynQZm7xstI3BMLnMtE7plaChrafr/preview"
+      width="100%" 
+      height="100%" 
+      style="border:none;"
+      title="Embedded English CV">
+    </iframe>
+  </div>
+
+  <div style="color:var(--muted); text-align:center; margin-top:40px; font-size:14px;">
+    Last updated: November 2025
+  </div>
 </main>
+
 
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
