@@ -4,13 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Clémence Bois — Economist</title>
-  <meta name="description" content="Personal website of Clémence Bois — PhD Candidate at PSE / Paris 1 and Economist at the French Treasury." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="description" content="Personal website of Clémence Bois — PhD Candidate at PSE / University Paris 1 and Economist at the French Treasury." />
+  <link rel="canonical" href="https://clemence-bois.github.io/" />
+
+  <!-- Favicon / icons (place files in /assets) -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
   <style>
-    :root{ --bg:#0b1020; --surface:#0f172a; --text:#e5e7eb; --muted:#9aa4b2; --link:#7dd3fc; --accent:#22d3ee; --max:880px; --radius:14px; }
-    :root.light{ --bg:#f8fafc; --surface:#ffffff; --text:#0f172a; --muted:#475569; --link:#0ea5e9; --accent:#0891b2; }
+    :root{ --bg:#0b1020; --surface:#0f172a; --text:#e5e7eb; --muted:#9aa4b2; --link:#7dd3fc; --max:880px; --radius:14px; }
+    :root.light{ --bg:#f8fafc; --surface:#ffffff; --text:#0f172a; --muted:#475569; --link:#0ea5e9; }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
@@ -24,18 +33,39 @@
     .brand .name{font-family:Merriweather,serif;font-weight:700;letter-spacing:.2px}
     .navlinks{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
     .navlinks a{color:var(--text);opacity:.9}
-    .navlinks a:hover{opacity:1;color:var(--link)}
+    .navlinks a[aria-current="page"]{text-decoration:underline; text-underline-offset:4px}
+    .navlinks a:hover{opacity:1}
     .ghost{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(148,163,184,.28);background:transparent;color:var(--text);cursor:pointer}
     .ghost:hover{box-shadow:0 0 0 3px rgba(125,211,252,.25)}
     .hero{padding:72px 0 28px}
     .hero-grid{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:center}
-    .avatar{width:120px;height:120px;border-radius:16px;background:#0b1324 url('assets/portrait.jpg') center/cover no-repeat;border:1px solid rgba(148,163,184,.25)}
+    .avatar{border-radius:16px;border:1px solid rgba(148,163,184,.25);display:block}
     h1{font-family:Merriweather,serif;font-size:clamp(28px,4vw,40px);margin:0 0 6px}
     .muted{color:var(--muted)}
     .card{background:var(--surface);border:1px solid rgba(148,163,184,.25);border-radius:var(--radius);padding:18px;margin-top:20px}
     footer{padding:28px 0 42px;color:var(--muted)}
-    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.avatar{width:92px;height:92px;border-radius:12px}}
+    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
   </style>
+
+  <!-- JSON-LD Person (replace placeholders) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Clémence Bois",
+    "jobTitle":"Economist, PhD Candidate",
+    "affiliation":"Paris School of Economics / Université Paris 1",
+    "email":"mailto:clemence.bois@psemail.eu",
+    "url":"https://clemence-bois.github.io/",
+    "sameAs":[
+      "https://scholar.google.com/citations?user=XXXX",
+      "https://orcid.org/XXXX",
+      "https://www.ssrn.com/author=XXXX",
+      "https://ideas.repec.org/f/XXXX.html",
+      "https://github.com/clemence-bois"
+    ]
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -43,10 +73,9 @@
       <nav aria-label="main navigation">
         <div class="brand"><span class="name">Clémence&nbsp;Bois</span></div>
         <div class="navlinks">
-          <a href="index.html">Home</a>
+          <a href="index.html" aria-current="page">Home</a>
           <a href="research.html">Research</a>
           <a href="cv.html">CV</a>
-          <a href="tools.html">Tools & Apps</a>
           <button id="theme-toggle" class="ghost" title="Toggle light/dark" aria-label="Toggle theme">
             <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
             <svg id="icon-sun" style="display:none" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -59,12 +88,11 @@
   <main class="wrap">
     <section class="hero">
       <div class="hero-grid">
-        <div class="avatar" aria-label="Portrait"></div>
+        <img src="assets/portrait.jpg" alt="Portrait of Clémence Bois" width="120" height="120" class="avatar" />
         <div>
-          <h1>Economist — PhD Candidate</h1>
-          <p>Hi, I’m doing a Ph.D. at the Paris School of Economics / University Paris 1 Panthéon-Sorbonne. I’m also an economist at the French Treasury.</p>
+          <h1>PhD Candidate in Economics & Economist</h1>
+          <p>Hi, I’m a Ph.D. candidate at the Paris School of Economics / University Paris 1 Panthéon-Sorbonne and an economist at the French Treasury.</p>
           <p>My research lies at the intersection of international trade and environmental economics, exploring how information shocks, policy incentives, and trade integration shape environmental and economic outcomes.</p>
-          <p class="muted">Contact: clemence.bois [at] psemail.eu</p>
         </div>
       </div>
     </section>
@@ -73,7 +101,13 @@
       <div class="card">
         <h2 style="font-family:Merriweather,serif;margin:0 0 10px;font-size:22px">Contact</h2>
         <p>Email: <a href="mailto:clemence.bois@psemail.eu">clemence.bois@psemail.eu</a></p>
-        <p class="muted">Scholar · ORCID · SSRN · RePEc · GitHub</p>
+        <p>
+          <a href="https://scholar.google.com/citations?user=XXXX" target="_blank" rel="noopener">Google Scholar</a> ·
+          <a href="https://orcid.org/XXXX" target="_blank" rel="noopener">ORCID</a> ·
+          <a href="https://www.ssrn.com/author=XXXX" target="_blank" rel="noopener">SSRN</a> ·
+          <a href="https://ideas.repec.org/f/XXXX.html" target="_blank" rel="noopener">RePEc</a> ·
+          <a href="https://github.com/clemence-bois" target="_blank" rel="noopener">GitHub</a>
+        </p>
       </div>
     </section>
   </main>
@@ -96,4 +130,3 @@
   </script>
 </body>
 </html>
-
