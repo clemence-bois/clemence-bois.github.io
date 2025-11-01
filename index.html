@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clémence Bois — Economist</title>
+  <meta name="description" content="Personal website of Clémence Bois — PhD Candidate at Paris School of Economics / University Paris 1 Panthéon-Sorbonne, and Economist at the French Treasury." />
+  <meta property="og:title" content="Clémence Bois — Economist" />
+  <meta property="og:type" content="website" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b1020; --card:#0f172a; --muted:#94a3b8; --text:#e5e7eb; --accent:#38bdf8; --accent-2:#a78bfa; --max:1120px; }
+    @media (prefers-color-scheme: light){ :root{ --bg:#f8fafc; --card:#ffffff; --muted:#475569; --text:#0f172a; --accent:#0891b2; --accent-2:#6d28d9; } }
+    body{ margin:0; font-family:Inter, system-ui, sans-serif; background:linear-gradient(180deg,var(--bg),#070b16 80%); color:var(--text); }
+    a{ color:var(--accent); text-decoration:none; } a:hover{text-decoration:underline;}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(10px);background:linear-gradient(180deg,rgba(7,11,22,.9),rgba(7,11,22,.4));border-bottom:1px solid rgba(148,163,184,.15);}
+    nav{display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:700;}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));}
+    .navlinks a{margin-left:18px;color:var(--text);opacity:.9;} .navlinks a:hover{color:var(--accent);}
+    .hero{padding:72px 0 36px;} .hero-grid{display:grid;gap:28px;grid-template-columns:120px 1fr;align-items:center;}
+    .avatar{width:120px;height:120px;border-radius:18px;background:#0b1324 url('assets/portrait.jpg') center/cover no-repeat;border:1px solid rgba(148,163,184,.25);}
+    .hero h1{font-size:clamp(28px,4vw,40px);margin:0 0 8px;}
+    .muted{color:var(--muted);}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:14px;background:linear-gradient(135deg,rgba(56,189,248,.15),rgba(167,139,250,.15));border:1px solid rgba(148,163,184,.25);color:var(--text);font-weight:600;}
+    .row{display:flex;gap:8px;flex-wrap:wrap;}
+    footer{padding:28px 0 48px;color:var(--muted);}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav aria-label="main navigation">
+      <div class="brand"><span class="dot"></span><span>Clémence Bois</span></div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="cv.html">CV</a>
+        <a href="tools.html">Tools & Apps</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="avatar" aria-label="Portrait"></div>
+      <div>
+        <h1>Economist — PhD Candidate</h1>
+        <p>Hi, I’m doing a Ph.D. at the Paris School of Economics / University Paris 1 Panthéon-Sorbonne. I’m also an economist at the French Treasury.</p>
+        <p>My research lies at the intersection of international trade and environmental economics, exploring how information shocks, policy incentives, and trade integration shape environmental and economic outcomes.</p>
+        <p class="muted">Contact: clemence.bois [at] psemail.eu</p>
+        <div class="row">
+          <a class="btn" href="cv.html">📄 CV</a>
+          <a class="btn" href="research.html">📚 Research</a>
+          <a class="btn" href="tools.html">🧪 Tools & Apps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:clemence.bois@psemail.eu">clemence.bois@psemail.eu</a></p>
+    <p class="muted">Scholar · ORCID · SSRN · RePEc · GitHub</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="year"></span> Clémence Bois</div>
+    <div class="muted">Static · No personal data collected</div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
