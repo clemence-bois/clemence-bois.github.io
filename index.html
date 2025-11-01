@@ -41,17 +41,16 @@
     .ghost:hover{box-shadow:0 0 0 3px rgba(125,211,252,.25)}
     
     /* HERO */
-    .hero{ padding:96px 0 36px; }
+    .hero{ padding:96px 0 24px; } /* léger resserrage en bas */
 
-    /* ✅ colonne 1 = largeur auto (celle de l'image), colonne 2 = le texte */
+    /* 1ère colonne = largeur de l'image ; on aligne les contenus en haut */
     .hero-grid{
       display:grid;
       grid-template-columns: auto 1fr;
-      gap:32px;
-      align-items:center;
+      gap:36px;
+      align-items:start;        /* ← le titre vient se caler en haut */
     }
 
-    /* ✅ avatar = image <img> : on met juste taille/bord/recadrage */
     .avatar{
       width:300px;
       height:400px;
@@ -61,19 +60,27 @@
       border:1px solid rgba(148,163,184,.25);
     }
 
-    h1{font-family:Merriweather,serif;font-size:clamp(28px,4vw,40px);margin:0 0 6px}
+    h1{font-family:Merriweather,serif;font-size:clamp(32px,4.8vw,46px);margin:0 0 14px} /* ↑ taille + ↑ espace sous le H1 */
     .muted{color:var(--muted)}
     .card{background:var(--surface);border:1px solid rgba(148,163,184,.25);border-radius:var(--radius);padding:18px;margin-top:20px}
+
+    /* petite footnote “liens académiques” */
+    .footnote{
+      margin:26px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
     footer{padding:28px 0 42px;color:var(--muted)}
 
-    /* ✅ mobile : 1 colonne + avatar plus petit */
     @media (max-width:900px){
       .hero-grid{grid-template-columns:1fr; gap:20px;}
       .avatar{ width:140px; height:140px; border-radius:18px; }
+      h1{font-size:clamp(26px,6.2vw,34px);}
     }
   </style>
 
-  <!-- JSON-LD Person (replace placeholders) -->
+  <!-- JSON-LD Person -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -115,27 +122,24 @@
   <main class="wrap">
     <section class="hero">
       <div class="hero-grid">
-        <!-- ✅ taille intrinsèque alignée sur le CSS pour éviter le décalage de mise en page -->
         <img src="assets/portrait.jpg" alt="Portrait of Clémence Bois" width="300" height="400" class="avatar" />
         <div>
           <h1>PhD Candidate in Economics & Economist</h1>
           <p>Hi, I’m a Ph.D. candidate at the Paris School of Economics / University Paris 1 Panthéon-Sorbonne and an economist at the French Treasury.</p>
           <p>My research lies at the intersection of international trade and environmental economics, exploring how information shocks, policy incentives, and trade integration shape environmental and economic outcomes.</p>
-        </div>
-      </div>
-    </section>
 
-    <section id="contact">
-      <div class="card">
-        <h2 style="font-family:Merriweather,serif;margin:0 0 10px;font-size:22px">Contact</h2>
-        <p>Email: <a href="mailto:clemence.bois@psemail.eu">clemence.bois@psemail.eu</a></p>
-        <p>
-          <a href="https://scholar.google.com/citations?user=XXXX" target="_blank" rel="noopener">Google Scholar</a> ·
-          <a href="https://orcid.org/XXXX" target="_blank" rel="noopener">ORCID</a> ·
-          <a href="https://www.ssrn.com/author=XXXX" target="_blank" rel="noopener">SSRN</a> ·
-          <a href="https://ideas.repec.org/f/XXXX.html" target="_blank" rel="noopener">RePEc</a> ·
-          <a href="https://github.com/clemence-bois" target="_blank" rel="noopener">GitHub</a>
-        </p>
+          <!-- email juste sous les interests, dans le même bloc -->
+          <p style="margin-top:10px"><strong>Contact:</strong> <a href="mailto:clemence.bois@psemail.eu">clemence.bois@psemail.eu</a></p>
+
+          <!-- liens en footnote, petit et discret -->
+          <p class="footnote">
+            <a href="https://scholar.google.com/citations?user=XXXX" target="_blank" rel="noopener">Google Scholar</a> ·
+            <a href="https://orcid.org/XXXX" target="_blank" rel="noopener">ORCID</a> ·
+            <a href="https://www.ssrn.com/author=XXXX" target="_blank" rel="noopener">SSRN</a> ·
+            <a href="https://ideas.repec.org/f/XXXX.html" target="_blank" rel="noopener">RePEc</a> ·
+            <a href="https://github.com/clemence-bois" target="_blank" rel="noopener">GitHub</a>
+          </p>
+        </div>
       </div>
     </section>
   </main>
