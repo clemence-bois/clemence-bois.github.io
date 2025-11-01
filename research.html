@@ -4,53 +4,82 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research — Clémence Bois</title>
-  <meta name="description" content="Research papers and projects — working papers with thumbnails and abstract toggles." />
+  <meta name="description" content="Working papers, policy contributions, and reports by Clémence Bois." />
   <link rel="canonical" href="https://clemence-bois.github.io/research.html" />
 
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
 
   <style>
-    :root{ --bg:#0b1020; --surface:#0f172a; --text:#e5e7eb; --muted:#9aa4b2; --link:#7dd3fc; --max:880px; --radius:14px; }
-    :root.light{ --bg:#f8fafc; --surface:#ffffff; --text:#0f172a; --muted:#475569; --link:#0ea5e9; }
+    :root{
+      --bg:#0b1020; --surface:#0f172a; --text:#e5e7eb; --muted:#9aa4b2; --link:#7dd3fc;
+      --max:1000px; --radius:14px; --border:rgba(148,163,184,.25);
+      --tint:rgba(56,189,248,.06);
+    }
+    :root.light{ --bg:#f8fafc; --surface:#ffffff; --text:#0f172a; --muted:#475569; --link:#0ea5e9; --tint:#eaf7ff; }
     *{box-sizing:border-box}
-    body{ margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
-    a{ color:var(--link); text-decoration:none; } a:hover{text-decoration:underline;}
-    .wrap{ max-width:var(--max); margin:0 auto; padding:0 20px; }
-    header{ position:sticky; top:0; z-index:50; background:rgba(2,6,23,.7); backdrop-filter:blur(10px); border-bottom:1px solid rgba(148,163,184,.18); }
-    :root.light header{ background:rgba(255,255,255,.8); }
-    nav{ display:flex; align-items:center; justify-content:space-between; height:64px; }
-    .brand{ display:flex; align-items:baseline; gap:10px; font-weight:700; }
-    .brand .name{ font-family:Merriweather,serif; font-weight:700; letter-spacing:.2px; }
-    .navlinks{ display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
-    .navlinks a{ color:var(--text); opacity:.9; } .navlinks a[aria-current="page"]{ text-decoration:underline; text-underline-offset:4px; }
-    .ghost{ display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:999px; border:1px solid rgba(148,163,184,.28); background:transparent; color:var(--text); cursor:pointer; }
-    main{ padding:24px 0 10px; }
-    h1{ font-family:Merriweather,serif; font-size:clamp(24px,3.2vw,32px); margin:0 0 10px; }
-    .muted{ color:var(--muted); }
-    .card{ background:var(--surface); border:1px solid rgba(148,163,184,.25); border-radius:var(--radius); padding:18px; margin:16px 0; }
-    .paper{ display:grid; grid-template-columns:140px 1fr; gap:16px; padding:16px; border-radius:12px; border:1px solid rgba(148,163,184,.2); background:rgba(2,6,23,.35); align-items:start; margin-bottom:14px; }
-    .thumb{ width:100%; height:120px; border-radius:12px; background:#0b1324 center/cover no-repeat; border:1px solid rgba(148,163,184,.25); }
-    .paper h3{ margin:.1rem 0 .35rem; font-size:18px; }
-    .meta{ font-size:13px; color:var(--muted); margin-bottom:8px; }
-    .row{ display:flex; gap:8px; flex-wrap:wrap; }
-    .pill{ padding:6px 10px; border-radius:999px; border:1px solid rgba(148,163,184,.25); font-size:12px; }
-    details summary{ list-style:none; }
-    details[open]{ background:rgba(56,189,248,.06); }
-    @media (max-width:900px){ .paper{ grid-template-columns:1fr; } }
-    footer{ padding:28px 0 42px; color:var(--muted); }
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:50;background:rgba(2,6,23,.7);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.18)}
+    :root.light header{background:rgba(255,255,255,.8)}
+    nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:baseline;gap:10px;font-weight:700}
+    .brand .name{font-family:Merriweather,serif;font-weight:700;letter-spacing:.2px}
+    .navlinks{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+    .navlinks a{color:var(--text);opacity:.9}
+    .navlinks a[aria-current="page"]{text-decoration:underline; text-underline-offset:4px}
+    .ghost{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(148,163,184,.28);background:transparent;color:var(--text);cursor:pointer}
+    .ghost:hover{box-shadow:0 0 0 3px rgba(125,211,252,.25)}
+
+    main{padding:28px 0 10px}
+    h1{font-family:Merriweather,serif;font-size:clamp(26px,3.2vw,34px);margin:0 0 8px}
+    h2{font-family:Merriweather,serif;font-size:clamp(20px,2.6vw,26px);margin:44px 0 14px}
+    .muted{color:var(--muted)}
+
+    /* Blocks */
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin:16px 0}
+    .section-note{margin:0 0 14px}
+
+    /* Paper item */
+    .paper{display:grid;grid-template-columns:160px 1fr;gap:18px;padding:16px;border-radius:12px;border:1px solid rgba(148,163,184,.2);background:rgba(2,6,23,.35);align-items:start;margin-bottom:18px;transition:background .2s ease, border-color .2s ease}
+    .paper:hover{border-color:var(--border);background:rgba(2,6,23,.42)}
+    .thumb{width:100%;height:130px;border-radius:12px;background:#0b1324 center/cover no-repeat;border:1px solid var(--border)}
+    .paper h3{margin:.1rem 0 .35rem;font-size:18px;line-height:1.35}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+    .row{display:flex;gap:8px;flex-wrap:wrap}
+    .pill{padding:6px 10px;border-radius:999px;border:1px solid var(--border);font-size:12px;background:transparent;color:var(--text)}
+    .pill:hover{text-decoration:none;box-shadow:0 0 0 2px rgba(125,211,252,.18)}
+    .chev{display:inline-flex;align-items:center;gap:6px}
+    .chev svg{transition:transform .2s ease}
+
+    details{border-radius:10px;margin-top:8px}
+    details[open]{background:var(--tint)}
+    details[open] + .chev svg{transform:rotate(180deg)}
+    details > summary{display:none} /* on pilote l'ouverture avec le bouton */
+
+    @media (max-width:900px){ .paper{grid-template-columns:1fr} .thumb{height:160px} }
+
+    /* Policy list */
+    .policy-item{padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:rgba(2,6,23,.35);margin-bottom:14px}
+    .policy-item h3{margin:.2rem 0 .3rem;font-size:17px}
+    .policy-item p{margin:.2rem 0 0}
+
+    footer{padding:28px 0 42px;color:var(--muted)}
   </style>
 </head>
 <body>
   <header>
     <div class="wrap">
       <nav aria-label="main navigation">
-        <div class="brand"><span class="name">Clémence Bois</span></div>
+        <div class="brand"><span class="name">Clémence&nbsp;Bois</span></div>
         <div class="navlinks">
           <a href="index.html">Home</a>
           <a href="research.html" aria-current="page">Research</a>
@@ -67,8 +96,10 @@
 
   <main class="wrap">
     <h1>Research</h1>
-    <p class="muted" style="margin:0 0 12px">Click the arrow to view abstracts.</p>
+    <p class="muted section-note">Click the arrow to view abstracts.</p>
 
+    <!-- WORKING PAPERS -->
+    <h2>Working papers</h2>
     <div class="card">
       <!-- Paper 1 -->
       <article class="paper">
@@ -76,9 +107,9 @@
         <div>
           <h3>
             Distance Beyond Geography: Understanding the Determinants of Sustainability Commitments in PTAs
-            <button class="pill" style="font-weight:600" aria-controls="abs_pta">▼</button>
+            <button class="pill chev" aria-controls="abs_pta" title="Show abstract">▼</button>
           </h3>
-          <div class="meta">Working paper</div>
+          <div class="meta">Working paper, 2025</div>
           <div class="row">
             <a class="pill" href="#">PDF</a>
             <a class="pill" href="#">Slides</a>
@@ -96,9 +127,9 @@
         <div>
           <h3>
             Trade, Reputation and the Dieselgate
-            <button class="pill" style="font-weight:600" aria-controls="abs_diesel">▼</button>
+            <button class="pill chev" aria-controls="abs_diesel" title="Show abstract">▼</button>
           </h3>
-          <div class="meta">Working paper</div>
+          <div class="meta">Working paper, 2025</div>
           <div class="row">
             <a class="pill" href="#">PDF</a>
             <a class="pill" href="#">Slides</a>
@@ -116,9 +147,9 @@
         <div>
           <h3>
             Shipping, Trade, and Pollution: A Natural Experiment from the Red Sea Crisis
-            <button class="pill" style="font-weight:600" aria-controls="abs_shipping">▼</button>
+            <button class="pill chev" aria-controls="abs_shipping" title="Show abstract">▼</button>
           </h3>
-          <div class="meta">Working paper</div>
+          <div class="meta">Working paper, 2025</div>
           <div class="row">
             <a class="pill" href="#">PDF</a>
             <a class="pill" href="#">Slides</a>
@@ -130,6 +161,37 @@
         </div>
       </article>
     </div>
+
+    <!-- POLICY CONTRIBUTIONS & REPORTS -->
+    <h2>Policy contributions & reports</h2>
+    <div class="card" style="padding-top:10px">
+      <div class="policy-item">
+        <h3>
+          <a href="https://www.cepii.fr/CEPII/fr/publications/lettre/abstract.asp?NoDoc=12822" target="_blank" rel="noopener">
+            European exposure to the United States — CEPII Letter No. 441
+          </a>
+        </h3>
+        <p class="muted"><em>CEPII, 2025.</em> Policy note on the EU’s exposure to U.S. trade policy and sectoral dependencies.</p>
+      </div>
+
+      <div class="policy-item">
+        <h3>
+          <a href="https://www.tresor.economie.gouv.fr/Articles/2025/02/07/rapport-2025-sur-le-commerce-exterieur-de-la-france" target="_blank" rel="noopener">
+            Rapport 2025 sur le commerce extérieur de la France
+          </a>
+        </h3>
+        <p class="muted"><em>DG Trésor, 2025.</em> Contribution on global trade dynamics, French export performance, and trade policy.</p>
+      </div>
+
+      <div class="policy-item">
+        <h3>
+          <a href="https://www.cnesco.fr/fr/engagements-citoyens/" target="_blank" rel="noopener">
+            CNESCO report on civic engagement in education
+          </a>
+        </h3>
+        <p class="muted"><em>CNESCO, 2024.</em> Contribution to the report on civic engagement, education policy, and economic implications.</p>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -140,18 +202,23 @@
   </footer>
 
   <script>
+    // Restore theme
     (function(){ const saved = localStorage.getItem('theme'); if(saved === 'light') document.documentElement.classList.add('light'); })();
     const btn = document.getElementById('theme-toggle'), root = document.documentElement,
           sun = document.getElementById('icon-sun'), moon = document.getElementById('icon-moon');
     function syncIcon(){ const isLight = root.classList.contains('light'); sun.style.display = isLight ? 'inline' : 'none'; moon.style.display = isLight ? 'none' : 'inline'; }
     syncIcon();
     btn.addEventListener('click',()=>{ root.classList.toggle('light'); localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark'); syncIcon(); });
+
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Abstract toggles
+    // Toggle abstracts
     document.querySelectorAll('button[aria-controls], a[aria-controls]').forEach(b=>{
       b.addEventListener('click', e=>{
-        const id = e.currentTarget.getAttribute('aria-controls'); const det = document.getElementById(id); if(det){ det.open = !det.open; }
+        const id = e.currentTarget.getAttribute('aria-controls');
+        const det = document.getElementById(id);
+        if(det){ det.open = !det.open; }
       });
     });
   </script>
