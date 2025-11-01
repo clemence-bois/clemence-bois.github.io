@@ -6,19 +6,34 @@
   <title>Research — Clémence Bois</title>
   <meta name="description" content="Working papers, policy contributions, and reports by Clémence Bois." />
   <link rel="canonical" href="https://clemence-bois.github.io/research.html" />
+
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
   <style>
-    :root{ --bg:#fdfdfb; --surface:#ffffff; --text:#1a1a1a; --muted:#666d77; --link:#005fa3; --border:rgba(0,0,0,.08); --tint:#f5f8ff; --max:1000px; --radius:14px; }
-    :root.dark{ --bg:#0b1020; --surface:#0f172a; --text:#e5e7eb; --muted:#9aa4b2; --link:#7dd3fc; --border:rgba(148,163,184,.25); --tint:rgba(56,189,248,.06); }
+    /* Theme: LIGHT by default, DARK when .dark on <html> */
+    :root{
+      --bg:#fdfdfb; --surface:#ffffff; --text:#1a1a1a; --muted:#666d77;
+      --link:#005fa3; --border:rgba(0,0,0,.08); --tint:#f5f8ff;
+      --max:1000px; --radius:14px;
+    }
+    :root.dark{
+      --bg:#0b1020; --surface:#0f172a; --text:#e5e7eb; --muted:#9aa4b2;
+      --link:#7dd3fc; --border:rgba(148,163,184,.25); --tint:rgba(56,189,248,.06);
+    }
+
     *{box-sizing:border-box}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
     a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    /* Header */
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.75);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
     .dark header{background:rgba(7,11,22,.7)}
     nav{display:flex;align-items:center;justify-content:space-between;height:64px}
@@ -28,32 +43,44 @@
     .navlinks a{color:var(--text);opacity:.9}
     .navlinks a[aria-current="page"]{text-decoration:underline;text-underline-offset:4px}
     .ghost{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer}
-    .ghost:hover{box-shadow:0 0 0 3px rgba(0,95,163,.15)} .dark .ghost:hover{box-shadow:0 0 0 3px rgba(125,211,252,.25)}
+    .ghost:hover{box-shadow:0 0 0 3px rgba(0,95,163,.15)}
+    .dark .ghost:hover{box-shadow:0 0 0 3px rgba(125,211,252,.25)}
+
+    /* Page */
     main{padding:28px 0 10px}
     h1{font-family:Merriweather,serif;font-size:clamp(26px,3.2vw,34px);margin:0 0 8px}
     h2{font-family:Merriweather,serif;font-size:clamp(20px,2.6vw,26px);margin:44px 0 14px}
-    .muted{color:var(--muted)} .section-note{margin:0 0 14px}
+    .muted{color:var(--muted)}
+    .section-note{margin:0 0 14px}
+
+    /* Paper cards */
     .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.04)}
-    .paper{display:grid;grid-template-columns:160px 1fr;gap:18px;padding:16px;border-radius:12px;border:1px solid var(--border);background:var(--surface);align-items:start;margin-bottom:18px;transition:background .2s ease,border-color .2s ease;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+    .paper{display:grid;grid-template-columns:160px 1fr;gap:18px;padding:16px;border-radius:14px;border:1px solid var(--border);background:var(--surface);align-items:start;margin-bottom:18px;box-shadow:0 2px 6px rgba(0,0,0,.04)}
     .dark .paper{background:rgba(2,6,23,.35)}
     .thumb{width:100%;height:130px;border-radius:12px;background:#0b1324 center/cover no-repeat;border:1px solid var(--border)}
-    .paper h3{margin:.1rem 0 .35rem;font-size:18px;line-height:1.35}
-    .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
-    .row{display:flex;gap:8px;flex-wrap:wrap}
-    .pill{padding:6px 10px;border-radius:999px;border:1px solid var(--border);font-size:12px;background:transparent;color:var(--text);text-decoration:none}
+    .paper h3{margin:.1rem 0 .35rem;font-size:20px;line-height:1.35}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:10px}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{padding:8px 12px;border-radius:999px;border:1px solid var(--border);font-size:12px;background:transparent;color:var(--text);text-decoration:none}
     .pill:hover{box-shadow:0 0 0 2px rgba(0,95,163,.15)}
     .dark .pill:hover{box-shadow:0 0 0 2px rgba(125,211,252,.18)}
-    details{border-radius:10px;margin-top:8px}
+
+    details{border-radius:12px;margin-top:10px}
     details[open]{background:var(--tint);border-left:3px solid var(--link);padding:12px 14px}
     details>summary{display:none}
     @media(max-width:900px){ .paper{grid-template-columns:1fr} .thumb{height:160px} }
-    .policy-item{padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);margin-bottom:14px;box-shadow:0 2px 6px rgba(0,0,0,.04)}
-    .dark .policy-item{background:rgba(2,6,23,.35)}
-    .policy-item h3{margin:.2rem 0 .3rem;font-size:17px} .policy-item p{margin:.2rem 0 0}
-    footer{padding:28px 0 42px;color:var(--muted)}
+
+    /* Sober list for policy contributions */
+    .publist{list-style:none;margin:0;padding:0}
+    .publist li{padding:14px 0;border-bottom:1px solid var(--border)}
+    .publist li:last-child{border-bottom:none}
+    .pub-title{font-weight:600}
+    .pub-outlet{display:block;color:var(--muted);font-style:italic;margin-top:4px}
+    .pub-note{margin-top:6px;color:var(--muted)}
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="wrap">
       <nav aria-label="main navigation">
@@ -65,29 +92,34 @@
           <a href="tools.html">Tools & Apps</a>
           <button id="theme-toggle" class="ghost" title="Toggle theme" aria-label="Toggle theme">
             <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            <svg id="icon-sun"  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg id="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           </button>
         </div>
       </nav>
     </div>
   </header>
 
+  <!-- Content -->
   <main class="wrap">
     <h1>Research</h1>
     <p class="muted section-note">Click the arrow to view abstracts.</p>
 
+    <!-- WORKING PAPERS (card per paper) -->
     <h2>Working papers</h2>
     <div class="card">
+      <!-- Paper 1 -->
       <article class="paper">
         <div class="thumb" style="background-image:url('assets/pta_thumb.jpg');" aria-hidden="true"></div>
         <div>
           <h3>
             Distance Beyond Geography: Understanding the Determinants of Sustainability Commitments in PTAs
-            <button class="pill" aria-controls="abs_pta">▼</button>
+            <button class="pill" aria-controls="abs_pta" title="Show abstract">▼</button>
           </h3>
           <div class="meta">Working paper, 2025</div>
           <div class="row">
-            <a class="pill" href="#">PDF</a><a class="pill" href="#">Slides</a><a class="pill" href="#">Code</a>
+            <a class="pill" href="#">PDF</a>
+            <a class="pill" href="#">Slides</a>
+            <a class="pill" href="#">Code</a>
           </div>
           <details id="abs_pta"><summary hidden>Abstract</summary>
             <p>This paper investigates the factors that influence the inclusion of social and environmental provisions in Preferential Trade Agreements (PTAs), paying particular attention to their level of enforceability. Although prior research has largely addressed the effectiveness of these provisions and their implications for trade, the underlying drivers of their adoption remain insufficiently explored. To fill this gap, I construct an original dataset that captures the degree of enforcement of sustainable development provisions, using a lexical analysis approach that avoids normative assumptions and enables consistent cross-agreement comparisons. The empirical analysis relies on a probit model applied to a panel of country pairs over time. The results suggest that greater political and social distance between partners is associated with a lower probability of including high-enforcement provisions. By contrast, differences in economic development and trade integration appear to have no systematic effect. These findings underscore the role of political and normative alignment in shaping the design of sustainability-related trade commitments. The paper thus offers a new perspective on how relational asymmetries condition the negotiation and content of trade agreements.</p>
@@ -95,15 +127,19 @@
         </div>
       </article>
 
+      <!-- Paper 2 -->
       <article class="paper">
         <div class="thumb" style="background-image:url('assets/diesel_thumb.jpg');" aria-hidden="true"></div>
         <div>
-          <h3>Trade, Reputation and the Dieselgate
-            <button class="pill" aria-controls="abs_diesel">▼</button>
+          <h3>
+            Trade, Reputation and the Dieselgate
+            <button class="pill" aria-controls="abs_diesel" title="Show abstract">▼</button>
           </h3>
           <div class="meta">Working paper, 2025</div>
           <div class="row">
-            <a class="pill" href="#">PDF</a><a class="pill" href="#">Slides</a><a class="pill" href="#">Code</a>
+            <a class="pill" href="#">PDF</a>
+            <a class="pill" href="#">Slides</a>
+            <a class="pill" href="#">Code</a>
           </div>
           <details id="abs_diesel"><summary hidden>Abstract</summary>
             <p>In September 2015, the U.S. Environmental Protection Agency revealed that Volkswagen had installed defeat devices to cheat emissions tests, triggering what became known as the Dieselgate scandal. This paper asks whether this reputational shock affected international trade in diesel-powered cars, focusing on intra-European exports. Using product-level bilateral trade data and a difference-in-differences strategy, we find a significant and persistent decline in exports of German diesel cars (~17%) starting a year after the scandal; French diesel exports fall in the short term but fade out. Exploiting cross-country variation in exposure (press coverage, Google searches) and reaction (tweet sentiment), we show that better-informed countries penalized German diesel less, consistent with more accurate belief updating. The results shed light on how reputational shocks propagate through trade and on the role of information and brand image in shaping consumer responses.</p>
@@ -111,15 +147,19 @@
         </div>
       </article>
 
+      <!-- Paper 3 -->
       <article class="paper">
         <div class="thumb" style="background-image:url('assets/shipping_thumb.jpg');" aria-hidden="true"></div>
         <div>
-          <h3>Shipping, Trade, and Pollution: A Natural Experiment from the Red Sea Crisis
-            <button class="pill" aria-controls="abs_shipping">▼</button>
+          <h3>
+            Shipping, Trade, and Pollution: A Natural Experiment from the Red Sea Crisis
+            <button class="pill" aria-controls="abs_shipping" title="Show abstract">▼</button>
           </h3>
           <div class="meta">Working paper, 2025</div>
           <div class="row">
-            <a class="pill" href="#">PDF</a><a class="pill" href="#">Slides</a><a class="pill" href="#">Code</a>
+            <a class="pill" href="#">PDF</a>
+            <a class="pill" href="#">Slides</a>
+            <a class="pill" href="#">Code</a>
           </div>
           <details id="abs_shipping"><summary hidden>Abstract</summary>
             <p>Maritime transport is a cornerstone of globalization but also a major source of localized air pollution in port cities. We exploit the Red Sea crisis of December 2023—an abrupt geopolitical shock that sharply reduced vessel arrivals in European ports—to identify the causal effect of maritime traffic on urban pollution. Combining ship-level AIS with high-frequency pollution and weather data for 613 ports, we estimate that shipping substantially increases nitrogen oxides: a 1,000 DWT rise in hourly traffic raises daily NO₂ by 0.025 µg/m³, with effects detectable up to 10 km. Counterfactuals suggest shipping accounts for around 8% of ambient NO₂ on average and over 50% in major hubs. We find no robust causal effects for SO₂ or PM, pointing to NOx as the primary local externality of shipping. Port-level designs reveal much sharper effects than city-wide analyses, indicating that naive city-scale designs understate true external costs.</p>
@@ -128,23 +168,34 @@
       </article>
     </div>
 
+    <!-- POLICY CONTRIBUTIONS & REPORTS (sober list) -->
     <h2>Policy contributions & reports</h2>
-    <div class="card" style="padding-top:10px">
-      <div class="policy-item">
-        <h3><a href="https://www.cepii.fr/CEPII/fr/publications/lettre/abstract.asp?NoDoc=12822" target="_blank" rel="noopener">European exposure to the United States — CEPII Letter No. 441</a></h3>
-        <p class="muted"><em>CEPII, 2025.</em> Policy note on the EU’s exposure to U.S. trade policy and sectoral dependencies.</p>
-      </div>
-      <div class="policy-item">
-        <h3><a href="https://www.tresor.economie.gouv.fr/Articles/2025/02/07/rapport-2025-sur-le-commerce-exterieur-de-la-france" target="_blank" rel="noopener">Rapport 2025 sur le commerce extérieur de la France</a></h3>
-        <p class="muted"><em>DG Trésor, 2025.</em> Contribution on global trade dynamics, French export performance, and trade policy.</p>
-      </div>
-      <div class="policy-item">
-        <h3><a href="https://www.cnesco.fr/fr/engagements-citoyens/" target="_blank" rel="noopener">CNESCO report on civic engagement in education</a></h3>
-        <p class="muted"><em>CNESCO, 2024.</em> Contribution to the report on civic engagement, education policy, and economic implications.</p>
-      </div>
-    </div>
+    <ul class="publist">
+      <li>
+        <a class="pub-title" href="https://www.cepii.fr/CEPII/fr/publications/lettre/abstract.asp?NoDoc=12822" target="_blank" rel="noopener">
+          European exposure to the United States — CEPII Letter No. 441
+        </a>
+        <span class="pub-outlet">CEPII, 2025.</span>
+        <div class="pub-note">Policy note on the EU’s exposure to U.S. trade policy and sectoral dependencies.</div>
+      </li>
+      <li>
+        <a class="pub-title" href="https://www.tresor.economie.gouv.fr/Articles/2025/02/07/rapport-2025-sur-le-commerce-exterieur-de-la-france" target="_blank" rel="noopener">
+          Rapport 2025 sur le commerce extérieur de la France
+        </a>
+        <span class="pub-outlet">DG Trésor, 2025.</span>
+        <div class="pub-note">Contribution on global trade dynamics, French export performance, and trade policy.</div>
+      </li>
+      <li>
+        <a class="pub-title" href="https://www.cnesco.fr/fr/engagements-citoyens/" target="_blank" rel="noopener">
+          CNESCO report on civic engagement in education
+        </a>
+        <span class="pub-outlet">CNESCO, 2024.</span>
+        <div class="pub-note">Contribution to the report on civic engagement, education policy, and economic implications.</div>
+      </li>
+    </ul>
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
       <div>© <span id="year"></span> Clémence Bois</div>
@@ -152,14 +203,42 @@
     </div>
   </footer>
 
+  <!-- Theme script -->
   <script>
-    (function(){ const saved=localStorage.getItem('theme'); const prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches; if(saved==='dark'||(!saved&&prefersDark)) document.documentElement.classList.add('dark'); })();
-    const btn=document.getElementById('theme-toggle'), root=document.documentElement, sun=document.getElementById('icon-sun'), moon=document.getElementById('icon-moon');
-    function syncIcon(){ const isDark=root.classList.contains('dark'); sun.style.display=isDark?'inline':'none'; moon.style.display=isDark?'none':'inline'; }
+    (function(){
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) document.documentElement.classList.add('dark');
+    })();
+
+    const btn = document.getElementById('theme-toggle'),
+          root = document.documentElement,
+          sun  = document.getElementById('icon-sun'),
+          moon = document.getElementById('icon-moon');
+
+    function syncIcon(){
+      const isDark = root.classList.contains('dark');
+      sun.style.display  = isDark ? 'inline' : 'none';
+      moon.style.display = isDark ? 'none'  : 'inline';
+    }
     syncIcon();
-    btn.addEventListener('click',()=>{ root.classList.toggle('dark'); localStorage.setItem('theme', root.classList.contains('dark')?'dark':'light'); syncIcon(); });
-    document.getElementById('year').textContent=new Date().getFullYear();
-    document.querySelectorAll('button[aria-controls]').forEach(b=>b.addEventListener('click',e=>{const id=e.currentTarget.getAttribute('aria-controls'); const det=document.getElementById(id); if(det){ det.open=!det.open; }}));
+
+    btn.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+      syncIcon();
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Abstract toggles
+    document.querySelectorAll('button[aria-controls]').forEach(b=>{
+      b.addEventListener('click', e=>{
+        const id = e.currentTarget.getAttribute('aria-controls');
+        const det = document.getElementById(id);
+        if(det){ det.open = !det.open; }
+      });
+    });
   </script>
 </body>
 </html>
