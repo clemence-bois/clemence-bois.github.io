@@ -26,6 +26,14 @@
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:14px;background:linear-gradient(135deg,rgba(56,189,248,.15),rgba(167,139,250,.15));border:1px solid rgba(148,163,184,.25);color:var(--text);font-weight:600;}
     .row{display:flex;gap:8px;flex-wrap:wrap;}
     footer{padding:28px 0 48px;color:var(--muted);}
+    :root.light{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --muted:#475569;
+  --text:#0f172a;
+  --accent:#0891b2;
+  --accent-2:#6d28d9;
+}
   </style>
 </head>
 <body>
@@ -38,6 +46,7 @@
         <a href="research.html">Research</a>
         <a href="cv.html">CV</a>
         <a href="tools.html">Tools & Apps</a>
+        <button id="theme-toggle" class="btn" style="padding:6px 10px;font-size:14px;">🌙</button>
       </div>
     </nav>
   </div>
@@ -75,5 +84,23 @@
   </div>
 </footer>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+  const btn = document.getElementById('theme-toggle');
+  const root = document.documentElement;
+
+  // Vérifie s'il y a un thème sauvegardé
+  if (localStorage.getItem('theme') === 'light') {
+    root.classList.add('light');
+    btn.textContent = '☀️';
+  }
+
+  btn.addEventListener('click', () => {
+    root.classList.toggle('light');
+    const isLight = root.classList.contains('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    btn.textContent = isLight ? '☀️' : '🌙';
+  });
+</script>
 </body>
 </html>
+
