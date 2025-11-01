@@ -17,61 +17,160 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
 
   <style>
+    /* ======================
+       PALETTE & BASE STYLES
+       ====================== */
     :root{
-      --bg:#0b1020; --surface:#0f172a; --text:#e5e7eb; --muted:#9aa4b2; --link:#7dd3fc;
-      --max:1000px; --radius:14px; --border:rgba(148,163,184,.25);
+      --bg:#0b1020;
+      --surface:#0f172a;
+      --text:#e5e7eb;
+      --muted:#9aa4b2;
+      --link:#7dd3fc;
+      --border:rgba(148,163,184,.25);
       --tint:rgba(56,189,248,.06);
+      --max:1000px;
+      --radius:14px;
     }
-    :root.light{ --bg:#f8fafc; --surface:#ffffff; --text:#0f172a; --muted:#475569; --link:#0ea5e9; --tint:#eaf7ff; }
+
+    :root.light {
+      --bg:#fdfdfb;             /* fond doux */
+      --surface:#ffffff;        /* cartes nettes */
+      --text:#1a1a1a;           /* noir doux */
+      --muted:#666d77;          /* gris chaud élégant */
+      --link:#005fa3;           /* bleu PSE discret */
+      --border:rgba(0,0,0,.08);
+      --tint:#f5f8ff;           /* fond abstracts */
+    }
+
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;z-index:50;background:rgba(2,6,23,.7);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.18)}
+
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(2,6,23,.7);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(148,163,184,.18);
+    }
     :root.light header{background:rgba(255,255,255,.8)}
     nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .brand{display:flex;align-items:baseline;gap:10px;font-weight:700}
     .brand .name{font-family:Merriweather,serif;font-weight:700;letter-spacing:.2px}
     .navlinks{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
     .navlinks a{color:var(--text);opacity:.9}
-    .navlinks a[aria-current="page"]{text-decoration:underline; text-underline-offset:4px}
-    .ghost{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(148,163,184,.28);background:transparent;color:var(--text);cursor:pointer}
+    .navlinks a[aria-current="page"]{text-decoration:underline;text-underline-offset:4px}
+    .ghost{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 10px;
+      border-radius:999px;border:1px solid rgba(148,163,184,.28);
+      background:transparent;color:var(--text);cursor:pointer;
+    }
     .ghost:hover{box-shadow:0 0 0 3px rgba(125,211,252,.25)}
 
+    /* ======================
+       PAGE STRUCTURE
+       ====================== */
     main{padding:28px 0 10px}
     h1{font-family:Merriweather,serif;font-size:clamp(26px,3.2vw,34px);margin:0 0 8px}
     h2{font-family:Merriweather,serif;font-size:clamp(20px,2.6vw,26px);margin:44px 0 14px}
     .muted{color:var(--muted)}
-
-    /* Blocks */
-    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin:16px 0}
     .section-note{margin:0 0 14px}
 
-    /* Paper item */
-    .paper{display:grid;grid-template-columns:160px 1fr;gap:18px;padding:16px;border-radius:12px;border:1px solid rgba(148,163,184,.2);background:rgba(2,6,23,.35);align-items:start;margin-bottom:18px;transition:background .2s ease, border-color .2s ease}
-    .paper:hover{border-color:var(--border);background:rgba(2,6,23,.42)}
-    .thumb{width:100%;height:130px;border-radius:12px;background:#0b1324 center/cover no-repeat;border:1px solid var(--border)}
+    .card{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px;
+      margin:16px 0;
+      box-shadow:0 2px 6px rgba(0,0,0,.04);
+    }
+
+    /* ======================
+       PAPERS / ABSTRACTS
+       ====================== */
+    .paper{
+      display:grid;
+      grid-template-columns:160px 1fr;
+      gap:18px;
+      padding:16px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:var(--surface);
+      align-items:start;
+      margin-bottom:18px;
+      transition:background .2s ease,border-color .2s ease;
+    }
+
+    html:not(.light) .paper{background:rgba(2,6,23,.35)}
+
+    .thumb{
+      width:100%;
+      height:130px;
+      border-radius:12px;
+      background:#0b1324 center/cover no-repeat;
+      border:1px solid var(--border);
+    }
+
     .paper h3{margin:.1rem 0 .35rem;font-size:18px;line-height:1.35}
     .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
     .row{display:flex;gap:8px;flex-wrap:wrap}
-    .pill{padding:6px 10px;border-radius:999px;border:1px solid var(--border);font-size:12px;background:transparent;color:var(--text)}
-    .pill:hover{text-decoration:none;box-shadow:0 0 0 2px rgba(125,211,252,.18)}
+
+    /* Buttons (PDF, Slides, Code) */
+    .pill{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      font-size:12px;
+      background:transparent;
+      color:var(--text);
+      text-decoration:none;
+    }
+    .pill:hover{box-shadow:0 0 0 2px rgba(125,211,252,.18)}
+    .light .pill{background:#f8fafc;color:#333}
+    .light .pill:hover{background:#eaf3ff;color:var(--link);border-color:var(--link)}
+
     .chev{display:inline-flex;align-items:center;gap:6px}
     .chev svg{transition:transform .2s ease}
 
     details{border-radius:10px;margin-top:8px}
-    details[open]{background:var(--tint)}
-    details[open] + .chev svg{transform:rotate(180deg)}
-    details > summary{display:none} /* on pilote l'ouverture avec le bouton */
+    details[open]{
+      background:var(--tint);
+      border-left:3px solid var(--link);
+      padding:12px 14px;
+    }
+    details>summary{display:none}
 
-    @media (max-width:900px){ .paper{grid-template-columns:1fr} .thumb{height:160px} }
+    @media(max-width:900px){
+      .paper{grid-template-columns:1fr}
+      .thumb{height:160px}
+    }
 
-    /* Policy list */
-    .policy-item{padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:rgba(2,6,23,.35);margin-bottom:14px}
+    /* ======================
+       POLICY CONTRIBUTIONS
+       ====================== */
+    .policy-item{
+      padding:14px 16px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:var(--surface);
+      margin-bottom:14px;
+      box-shadow:0 2px 6px rgba(0,0,0,.04);
+    }
+    html:not(.light) .policy-item{background:rgba(2,6,23,.35)}
     .policy-item h3{margin:.2rem 0 .3rem;font-size:17px}
     .policy-item p{margin:.2rem 0 0}
 
+    /* ======================
+       FOOTER
+       ====================== */
     footer{padding:28px 0 42px;color:var(--muted)}
   </style>
 </head>
@@ -101,7 +200,6 @@
     <!-- WORKING PAPERS -->
     <h2>Working papers</h2>
     <div class="card">
-      <!-- Paper 1 -->
       <article class="paper">
         <div class="thumb" style="background-image:url('assets/pta_thumb.jpg');" aria-hidden="true"></div>
         <div>
@@ -121,7 +219,6 @@
         </div>
       </article>
 
-      <!-- Paper 2 -->
       <article class="paper">
         <div class="thumb" style="background-image:url('assets/diesel_thumb.jpg');" aria-hidden="true"></div>
         <div>
@@ -141,7 +238,6 @@
         </div>
       </article>
 
-      <!-- Paper 3 -->
       <article class="paper">
         <div class="thumb" style="background-image:url('assets/shipping_thumb.jpg');" aria-hidden="true"></div>
         <div>
@@ -202,25 +298,34 @@
   </footer>
 
   <script>
-    // Restore theme
-    (function(){ const saved = localStorage.getItem('theme'); if(saved === 'light') document.documentElement.classList.add('light'); })();
-    const btn = document.getElementById('theme-toggle'), root = document.documentElement,
-          sun = document.getElementById('icon-sun'), moon = document.getElementById('icon-moon');
-    function syncIcon(){ const isLight = root.classList.contains('light'); sun.style.display = isLight ? 'inline' : 'none'; moon.style.display = isLight ? 'none' : 'inline'; }
-    syncIcon();
-    btn.addEventListener('click',()=>{ root.classList.toggle('light'); localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark'); syncIcon(); });
+    (function(){
+      const saved = localStorage.getItem('theme');
+      if(saved === 'light') document.documentElement.classList.add('light');
+    })();
 
-    // Year
+    const btn = document.getElementById('theme-toggle'),
+          root = document.documentElement,
+          sun = document.getElementById('icon-sun'),
+          moon = document.getElementById('icon-moon');
+
+    function syncIcon(){
+      const isLight = root.classList.contains('light');
+      sun.style.display = isLight ? 'inline' : 'none';
+      moon.style.display = isLight ? 'none' : 'inline';
+    }
+
+    syncIcon();
+
+    btn.addEventListener('click',()=>{
+      root.classList.toggle('light');
+      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+      syncIcon();
+    });
+
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Toggle abstracts
-    document.querySelectorAll('button[aria-controls], a[aria-controls]').forEach(b=>{
+    document.querySelectorAll('button[aria-controls]').forEach(b=>{
       b.addEventListener('click', e=>{
         const id = e.currentTarget.getAttribute('aria-controls');
         const det = document.getElementById(id);
-        if(det){ det.open = !det.open; }
-      });
-    });
-  </script>
-</body>
-</html>
+        if
