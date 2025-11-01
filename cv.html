@@ -59,41 +59,34 @@
 </header>
 
 <main class="wrap">
-  <h1>CV</h1>
-  <div class="card">
-    <p>
-      <a href="assets/CV_FR.pdf" class="btn">📄 Télécharger CV (FR)</a>
-      <a href="assets/CV_EN.pdf" class="btn">📄 Download CV (EN)</a>
-    </p>
-    <div class="grid">
-      <div>
-        <h3>Education</h3>
-        <ul>
-          <li>Ph.D. in Economics — Paris School of Economics / University Paris 1</li>
-          <li>Master (M2) in International Economics — …</li>
-        </ul>
-        <h3>Teaching</h3>
-        <ul>
-          <li>Econometrics (UG/Grad) — Tutorials</li>
-          <li>International Trade (Grad) — Lectures</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Experience & Awards</h3>
-        <ul>
-          <li>Economist — French Treasury</li>
-          <li>Research Assistant — …</li>
-          <li>Grants & Fellowships — …</li>
-        </ul>
-        <h3>Skills</h3>
-        <ul>
-          <li>R, Python, Stata, LaTeX</li>
-          <li>GIS (QGIS, sf), Git/GitHub</li>
-          <li>French/English (C2)</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <h1>Curriculum Vitae (English)</h1>
+  
+  <p style="margin-bottom: 24px;">
+        <a href="assets/CV_EN.pdf" download class="btn" style="background:var(--link); color:var(--surface);">
+      📄 **Download CV (PDF)**
+    </a>
+  </p>
+
+    <div style="
+      /* Assure que le lecteur prenne de la hauteur pour être lisible */
+      height: calc(100vh - 120px); 
+      min-height: 800px;
+      border: 1px solid rgba(148,163,184,.25); 
+      border-radius: var(--radius); 
+      overflow: hidden;
+      margin-bottom: 40px; 
+  ">
+        <iframe 
+        src="https://drive.google.com/file/d/1AI0mynQZm7xstI3BMLnMtE7plaChrafr/view?usp=sharing" 
+        width="100%" 
+        height="100%" 
+        style="border: none;"
+        title="Embedded English CV">
+    </iframe>
+  </div>
+
+    <div style="color:var(--muted); text-align:center; padding-top:20px;">
+  </div>
 </main>
 
 <footer>
