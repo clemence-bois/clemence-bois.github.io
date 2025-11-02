@@ -6,7 +6,7 @@
   <title>Tools & Apps — Clémence Bois</title>
   <link rel="canonical" href="https://clemence-bois.github.io/tools.html" />
 
- <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/favicon.png">
   <meta name="theme-color" content="#ffffff">
 
@@ -31,12 +31,21 @@
     .ghost{ display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:999px; border:1px solid rgba(148,163,184,.28); background:transparent; color:var(--text); cursor:pointer; }
     main{ padding:24px 0 10px; }
     h1{ font-family:Merriweather,serif; font-size:clamp(24px,3.2vw,32px); margin:0 0 10px; }
+    h2{ font-size:clamp(18px,2.4vw,22px); margin:8px 0 4px; }
+    .muted{ color:var(--muted); }
     .card{ background:var(--surface); border:1px solid rgba(148,163,184,.25); border-radius:var(--radius); padding:18px; margin:16px 0; }
     .row{ display:flex; gap:8px; flex-wrap:wrap; }
     .btn{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:1px solid rgba(148,163,184,.3); background:rgba(56,189,248,.1); color:var(--text); font-weight:600; }
     .btn:hover{ box-shadow:0 0 0 3px rgba(56,189,248,.3); text-decoration:none; }
-    .iframe-wrap{ position:relative; aspect-ratio: 16/10; width:100%; border:1px solid rgba(148,163,184,.25); border-radius:14px; overflow:hidden; margin-top:10px; }
-    .iframe-wrap iframe{ width:100%; height:100%; border:0; }
+    .cards-grid{ display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:14px; }
+    @media (min-width:640px){ .cards-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (min-width:960px){ .cards-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+    .app-title{ margin:0 0 6px; font-weight:600; }
+    .app-desc{ margin:0 0 10px; color:var(--muted); }
+    /* lists */
+    ul{ margin:10px 0 0 0; padding-left:1.1rem; }
+    li{ margin:6px 0; }
+    li > ul{ margin-top:6px; }
     footer{ padding:28px 0 42px; color:var(--muted); }
   </style>
 </head>
@@ -62,24 +71,79 @@
 <main class="wrap">
   <h1>Tools & Apps</h1>
 
+  <!-- Useful Links & Resources -->
   <div class="card">
-    <h3>Trade Exposure Dashboard (Shiny)</h3>
-    <p class="muted">An application to explore sector-country trade exposure.</p>
-    <div class="row">
-      <a class="btn" href="https://ton-compte.shinyapps.io/trade-exposure/" target="_blank" rel="noopener">Open app</a>
-      <a class="btn" href="https://github.com/toncompte/trade-exposure" target="_blank" rel="noopener">Code</a>
-    </div>
-    <div class="iframe-wrap">
-      <iframe src="https://ton-compte.shinyapps.io/trade-exposure/" title="Trade Exposure App" loading="lazy"></iframe>
-    </div>
+    <h2>🧰 Useful Links & Resources</h2>
+    <ul>
+      <li><strong>Data visualization</strong>
+        <ul>
+          <li><a href="https://www.data-to-viz.com/" target="_blank" rel="noopener">Data to Viz</a> — A great guide to choosing the right graph for your data.</li>
+          <li><a href="https://informationisbeautiful.net/" target="_blank" rel="noopener">Information is Beautiful</a> — Inspiring data visualizations and storytelling.</li>
+          <li><a href="https://viz.wtf/" target="_blank" rel="noopener">WTF Visualizations</a> — Funny/confusing charts — what <em>not</em> to do.</li>
+          <li><a href="https://www.gapminder.org/tools/#$model$markers$bubble$encoding$y$data$concept=liver_cancer_deaths_per_100000_women&source=sg&space@=geo&=time;;&scale$domain:null&zoomed:null&type:null;;&frame$value=2021;;;;;&chart-type=bubbles&url=v2" target="_blank" rel="noopener">Gapminder Tools</a> — Explore global trends interactively.</li>
+        </ul>
+      </li>
+
+      <li><strong>R & coding</strong>
+        <ul>
+          <li><a href="https://www.paulamoraga.com/presentation-course/#/shiny-practical-1" target="_blank" rel="noopener">Paula Moraga — Shiny Course</a> — Hands-on introduction to R Shiny.</li>
+          <li><a href="https://lrouviere.github.io/TUTO_VISU/correction/ggplot2.html" target="_blank" rel="noopener">Lucile Rouvière — ggplot2 Tutorial</a> — Clear and concise ggplot2 refresher.</li>
+        </ul>
+      </li>
+
+      <li><strong>Economics & trade</strong>
+        <ul>
+          <li><a href="https://www.observatoire-des-territoires.gouv.fr/outils/cartographie-interactive/#c=indicator&i=ech_com.part_import&s=2023&selcodgeo=71&view=map9" target="_blank" rel="noopener">Observatoire des Territoires — Cartographie</a> — French spatial data & interactive maps.</li>
+          <li><a href="https://ourworldindata.org/trade-and-globalization" target="_blank" rel="noopener">Our World in Data — Trade & Globalization</a> — Big-picture evolutions of world trade.</li>
+          <li><a href="https://oec.world/en/games/connectrade" target="_blank" rel="noopener">OEC — Connectrade</a> — Connect countries through trade flows.</li>
+          <li><a href="https://oec.world/en/games/tradle" target="_blank" rel="noopener">OEC — Tradle</a> — Guess the country from its export basket.</li>
+        </ul>
+      </li>
+
+      <li><strong>Fun & Trade</strong>
+        <ul>
+          <li><a href="https://www.cartoonstock.com/search?type=images&keyword=international+trade&page=1" target="_blank" rel="noopener">CartoonStock — International Trade</a> — Cartoons about trade & globalization.</li>
+          <li><a href="https://www.universalcargo.com/the-worlds-most-bizarre-exports/" target="_blank" rel="noopener">Universal Cargo — Bizarre Exports</a> — Strange exports around the world.</li>
+          <li><a href="https://punsaboutpuns.com/tariff-jokes-and-puns/" target="_blank" rel="noopener">Tariff jokes & puns</a> — Wordplay with tariffs and trade.</li>
+          <li><a href="https://upjoke.com/export-jokes" target="_blank" rel="noopener">Export jokes</a> — Lighthearted export/econ jokes.</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 
+  <!-- My Interactive Tools -->
   <div class="card">
-    <h3>Fixest Cheatsheets & Tips</h3>
-    <p class="muted">Practical notes on fixest, modern DiD, Conley HAC, etc.</p>
-    <div class="row">
-      <a class="btn" href="assets/fixest_tips.pdf">PDF</a>
-      <a class="btn" href="https://github.com/toncompte/fixest-tips">Code</a>
+    <h2>⚙️ My Interactive Tools</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <h3 class="app-title">Web Application — DieselGate</h3>
+        <p class="app-desc">Diff-in-diff exploration of DieselGate’s impact on European car exports.</p>
+        <a class="btn" href="https://cboisphd.shinyapps.io/Web_Application_DieselGate/" target="_blank" rel="noopener">Open app</a>
+      </div>
+
+      <div class="card">
+        <h3 class="app-title">Trade Explorer — Automotive Sector</h3>
+        <p class="app-desc">Interactive dashboard on European automotive trade data.</p>
+        <a class="btn" href="https://clmence-bois.shinyapps.io/Appli_trade_automotive_sector/" target="_blank" rel="noopener">Open app</a>
+      </div>
+
+      <div class="card">
+        <h3 class="app-title">PTAs Wordcloud Generator</h3>
+        <p class="app-desc">Visualizes social & environmental clauses across trade agreements.</p>
+        <a class="btn" href="https://clmence-bois.shinyapps.io/PTAs_wordcloud/" target="_blank" rel="noopener">Open app</a>
+      </div>
+
+      <div class="card">
+        <h3 class="app-title">Draw Wordcloud</h3>
+        <p class="app-desc">Minimalist app to generate custom wordclouds.</p>
+        <a class="btn" href="https://cboisphd.shinyapps.io/Draw_wordcloud/" target="_blank" rel="noopener">Open app</a>
+      </div>
+
+      <div class="card">
+        <h3 class="app-title">Soccer Data Visualizer</h3>
+        <p class="app-desc">Interactive exploration of football statistics.</p>
+        <a class="btn" href="https://clmence-bois.shinyapps.io/soccer_data/" target="_blank" rel="noopener">Open app</a>
+      </div>
     </div>
   </div>
 </main>
@@ -96,8 +160,7 @@
   const btn = document.getElementById('theme-toggle'), root = document.documentElement,
         sun = document.getElementById('icon-sun'), moon = document.getElementById('icon-moon');
   function syncIcon(){ const isLight = root.classList.contains('light'); sun.style.display = isLight ? 'inline' : 'none'; moon.style.display = isLight ? 'none' : 'inline'; }
-  syncIcon();
-  btn.addEventListener('click',()=>{ root.classList.toggle('light'); localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark'); syncIcon(); });
+  if(btn){ syncIcon(); btn.addEventListener('click',()=>{ root.classList.toggle('light'); localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark'); syncIcon(); }); }
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
