@@ -19,16 +19,15 @@
 
   <style>
     /* Theme: LIGHT by default, DARK when .dark on <html> */
-    :root{
-      --bg:#fdfdfb; --surface:#ffffff; --text:#1a1a1a; --muted:#666d77;
-      --link:#005fa3; --border:rgba(0,0,0,.08); --tint:#f5f8ff;
-      --max:1000px; --radius:14px;
-    }
+    ::root{ --bg:#0b1020; --surface:#0f172a; --text:#e5e7eb; --muted:#9aa4b2; --link:#7dd3fc; --max:1200px; --radius:14px; } 
+
+    :root.light{ --bg:#f8fafc; --surface:#ffffff; --text:#0f172a; --muted:#475569; --link:#0ea5e9; } 
+    
     :root.dark{
       --bg:#0b1020; --surface:#0f172a; --text:#e5e7eb; --muted:#9aa4b2;
       --link:#7dd3fc; --border:rgba(148,163,184,.25); --tint:rgba(56,189,248,.06);
     }
-
+    
     *{box-sizing:border-box}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
     a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
